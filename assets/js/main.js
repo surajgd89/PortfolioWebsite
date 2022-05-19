@@ -79,14 +79,21 @@ let swiperTestimonial = new Swiper(".testimonial__container", {
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 
 const sections = document.querySelectorAll('section[id]')
-
+//console.log(sections);
 function scrollActive() {
-    const scrollY = window.pageYOffset
+    const scrollY = window.pageYOffset;
+    //console.log("scrollY" + scrollY);
 
     sections.forEach(current => {
+
+        console.log(current);
+
         const sectionHeight = current.offsetHeight,
-            sectionTop = current.offsetTop - 58,
-            sectionId = current.getAttribute('id')
+            sectionTop = current.offsetTop - 56,
+            sectionId = current.getAttribute('id');
+
+        //console.log("sectionTop" + sectionTop);
+        console.log("sectionId" + sectionId);
 
         if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
             document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link')
