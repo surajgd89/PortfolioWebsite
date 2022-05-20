@@ -66,35 +66,25 @@ let swiperTestimonial = new Swiper(".testimonial__container", {
     breakpoints: {
         576: {
             slidesPerView: 2,
-            spaceBetween: 20,
+            spaceBetween: 16,
         },
         768: {
             slidesPerView: 2,
-            spaceBetween: 48,
+            spaceBetween: 24,
         }
+
     }
 });
 
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
-
 const sections = document.querySelectorAll('section[id]')
-//console.log(sections);
 function scrollActive() {
     const scrollY = window.pageYOffset;
-    //console.log("scrollY" + scrollY);
-
     sections.forEach(current => {
-
-        console.log(current);
-
         const sectionHeight = current.offsetHeight,
             sectionTop = current.offsetTop - 56,
             sectionId = current.getAttribute('id');
-
-        //console.log("sectionTop" + sectionTop);
-        console.log("sectionId" + sectionId);
-
         if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
             document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link')
         } else {
@@ -103,8 +93,6 @@ function scrollActive() {
     })
 }
 window.addEventListener('scroll', scrollActive)
-
-
 /*=============== LIGHT DARK THEME ===============*/
 
 const themeButton = document.getElementById('theme-button')
