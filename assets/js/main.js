@@ -12,7 +12,8 @@ window.addEventListener('scroll', scrollHeader)
 /*=============== SERVICES MODAL ===============*/
 const modalViews = document.querySelectorAll('.services__modal'),
     modalBtns = document.querySelectorAll('.services__button'),
-    modalClose = document.querySelectorAll('.services__modal-close');
+    modalClose = document.querySelectorAll('.services__modal-close'),
+    services = document.querySelector('.services');
 
 let modal = function (modalClick) {
     modalViews[modalClick].classList.add('active-modal');
@@ -104,14 +105,14 @@ const selectedTheme = localStorage.getItem('selected-theme')
 const selectedIcon = localStorage.getItem('selected-icon')
 
 // We obtain the current theme that the interface has by validating the light-theme class
-const getCurrentTheme = () => document.body.classList.contains(lightTheme) ? 'dark' : 'light'
-const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'bx bx-moon' : 'bx bx-sun'
+const getCurrentTheme = () => document.body.classList.contains(lightTheme) ? 'light' : 'dark'
+const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'bx bx-sun' : 'bx bx-moon'
 
 // We validate if the user previously chose a topic
 if (selectedTheme) {
     // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the light
-    document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](lightTheme)
-    themeButton.classList[selectedIcon === 'bx bx-moon' ? 'add' : 'remove'](iconTheme)
+    document.body.classList[selectedTheme === 'light' ? 'add' : 'remove'](lightTheme)
+    themeButton.classList[selectedIcon === 'bx bx-sun' ? 'add' : 'remove'](iconTheme)
 }
 
 // Activate / deactivate the theme manually with the button
@@ -129,12 +130,14 @@ themeButton.addEventListener('click', () => {
 
 const sr = ScrollReveal({
     origin: 'top',
-    distance: '60px',
+    distance: '56px',
     duration: 2000,
     delay: 400,
     reset: true,
 });
 
 sr.reveal(`.home__data`);
-sr.reveal(`.home__handle`, { delay: 700 });
+sr.reveal(`.home__handle`, { delay: 700, });
 sr.reveal(`.home__social`, `.home__scroll`, { delay: 900, origin: 'bottom' });
+
+

@@ -1,0 +1,66 @@
+/*========== Variables Light theme ==========*/
+
+body.light-theme {
+    --title-color: hsl(var(--second-hue), 15%, 15%);
+    --text-color: hsl(var(--second-hue), 8%, 35%);
+    --body-color: hsl(var(--second-hue), 100%, 99%);
+    --container-color: #fff;
+
+    /*========== Color changes in some parts of the website, in light theme ==========*/
+
+    .scroll-header {
+        box-shadow: 0 2px 4px hsla(0, 0%, 0, 0.1);
+    }
+
+    .header .nav .nav__menu {
+        background-color: hsla(var(--second-hue), 32%, 90%, 0.8);
+    }
+
+    .section__subtitle {
+        color: var(--text-color);
+    }
+
+    .home__social-link {
+        box-shadow: 0 2px 8px hsla(var(--second-hue), 48%, 8%, 0.1);
+    }
+
+    .home__social::after,
+    .footer .footer__container .footer__social .footer__social-link {
+        background-color: var(--title-color);
+    }
+
+    .home__social .home__social-link,
+    .home__scroll,
+    .button,
+    .button:hover,
+    .work__filters .work__item.active-work,
+    .footer__title,
+    .footer__list .footer__link,
+    .footer__copy {
+        color: var(--title-color);
+    }
+
+    .about__box {
+        box-shadow: 0 2px 8px hsla(var(--second-hue), 48%, 8%, 0.1);
+    }
+
+    .skills__content,
+    .services__card,
+    .work__card,
+    .testimonial__card,
+    .contact__card {
+        box-shadow: 0 2px 16px hsla(var(--second-hue), 48%, 8%, 0.1);
+    }
+
+    ::-webkit-scrollbar {
+        background-color: hsl(var(--second-hue), 8%, 66%);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: hsl(var(--second-hue), 8%, 54%);
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: hsl(var(--second-hue), 8%, 44%);
+    }
+}
